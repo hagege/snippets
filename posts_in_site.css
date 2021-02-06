@@ -1,0 +1,108 @@
+/*----------------------------------------------------------------*/
+/* Gestaltung aktuelle posts - Ausgabe über shortcode
+/* hgg, 5.1.2020
+/*----------------------------------------------------------------*/
+
+/* Variablendeklaration */
+:root {
+  /* grau: ECECEC */
+  --me-farbe: #ECECEC;
+}
+/* container für alle gewünschten Beiträge, unabhängig von der Zahl der Beiträge */
+.aktuelle_beitraege {
+  display: column;
+}
+
+/* container für jeden einzelnen Beitrag */
+.flex-container {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  /* flex-wrap: wrap; */
+  flex-direction: row;
+  background-color: var(--me-farbe);
+}
+
+.flex-container_fuss {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0 20px;
+  flex-direction: row;
+  background-color: var(--me-farbe); 
+}
+
+
+.beitrags_titel {
+  font-size: 38px;
+  line-height: 1.2em; 
+  padding: 20px;
+  background-color: var(--me-farbe); 
+}
+
+.beitrags_text {
+  padding: 0 20px;
+  margin: 0px;
+  font-size: 20px;   
+}
+
+span.beitrags_categories {
+  font-size: 12px;
+  background-color: var(--me-farbe);    
+}
+
+/* könnte zusammengefasst werden bei wp-block-image */
+ 
+img.beitrags_bild {
+  max-width: 240px;
+	-webkit-filter: drop-shadow(3px 3px 1px #CCCCCC);
+  filter: drop-shadow(2px 2px 5px #CCCCCC);
+  border-bottom: 0 !important;
+}  
+
+/* Hover - Effekt bei Bildern */ 
+img.beitrags_bild:hover {
+		opacity:0.7;
+    /* Kachel etwas größer: */ 
+  	transform: scale(1.01, 1.01);
+		-webkit-filter: drop-shadow(5px 5px 3px #CCCCCC);
+    filter: drop-shadow(5px 5px 3px #CCCCCC);
+    border-bottom:none;
+}
+
+a.beitrags_bild_link {
+    border-bottom: 0px!important;
+}
+
+a.beitrags_bild_link:hover {
+    border-bottom: 0px!important;
+    background-color: transparent!important;
+}
+
+/* funktioniert nicht: 
+article .entry-content a:link {
+    text-decoration: none;
+    border-bottom: none;
+}
+.beitrags_bild a:link{
+		border-bottom:none;
+}
+*/
+
+@media only screen and (max-width: 950px) {
+	.flex-container {
+			flex-direction: column;
+	}
+  .beitrags_text {
+    padding: 20px 0px 0px 0px;
+  }
+  img.beitrags_bild {
+    max-width: 100%;
+  } 
+}
+ 
+
+
+
+
+
